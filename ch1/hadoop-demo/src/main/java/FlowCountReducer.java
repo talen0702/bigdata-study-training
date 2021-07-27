@@ -7,14 +7,14 @@ public class FlowCountReducer extends Reducer<Text, FlowBean, Text, FlowBean> {
     @Override
     protected void reduce(Text key, Iterable<FlowBean> values, Context context)
             throws IOException, InterruptedException {
-        long sum_upFlow = 0;
-        long sum_downFlow = 0;
+        long sumUpFlow = 0;
+        long sumDownFlow = 0;
         // 遍历所有的bean,将其中的上行流量,下行流量分别累加
         for (FlowBean bean : values) {
-            sum_upFlow += bean.getUpFlow();
-            sum_downFlow += bean.getDownFlow();
+            sumUpFlow += bean.getUpFlow();
+            sumDownFlow += bean.getDownFlow();
         }
-        FlowBean resultBean = new FlowBean(sum_upFlow, sum_downFlow);
+        FlowBean resultBean = new FlowBean(sumUpFlow, sumDownFlow);
         context.write(key, resultBean);
     }
 }
