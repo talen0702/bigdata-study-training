@@ -1,0 +1,1 @@
+ explain select distinct t1.name,t1.address, Now() z from students t1 LEFT ANTI JOIN (select * from (select * from students s1 where s1.age > 100) s2 where s2.age<10) t2 on t1.name<=>t2.name or t1.address<=>t2.address where t1.age>10 ORDER BY Now();

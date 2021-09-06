@@ -1,0 +1,752 @@
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Substitution has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Disable Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Simple Sanity Check has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Resolution has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Apply Char Padding has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Nondeterministic has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch UDF has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch UpdateNullability has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Subquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Cleanup has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 80
+Total time: 4.96E-4 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Eliminate Distinct has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Finish Analysis has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Union has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch OptimizeLimitZero has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch LocalRelation early has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Pullup Correlated Expressions has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Subquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Replace Operators has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Aggregate has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Operator Optimization before Inferring Filters has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Infer Filters has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Operator Optimization after Inferring Filters has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Push extra predicate through join has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Early Filter and Projection Push-Down has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Update CTE Relation Stats has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Join Reorder has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Eliminate Sorts has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Decimal Optimizations has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Distinct Aggregate Rewrite has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Object Expressions Optimization has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch LocalRelation has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Check Cartesian Products has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch RewriteSubquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch NormalizeFloatingNumbers has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch ReplaceUpdateFieldsExpression has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Optimize Metadata Only Query has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch PartitionPruning has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Pushdown Filters from PartitionPruning has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Cleanup filters that cannot be pushed down has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Extract Python UDFs has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch User Provided Optimizers has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 165
+Total time: 6.85E-4 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Preparations has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Substitution has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Disable Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Simple Sanity Check has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveRelations ===
+ 'Sort ['Now() ASC NULLS FIRST], true                                                     'Sort ['Now() ASC NULLS FIRST], true
+ +- 'Distinct                                                                             +- 'Distinct
+    +- 'Project ['t1.name, 't1.address, 'Now() AS z#505]                                     +- 'Project ['t1.name, 't1.address, 'Now() AS z#505]
+       +- 'Filter ('t1.age > 10)                                                                +- 'Filter ('t1.age > 10)
+          +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))            +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))
+             :- 'SubqueryAlias t1                                                                     :- 'SubqueryAlias t1
+!            :  +- 'UnresolvedRelation [students], [], false                                          :  +- 'SubqueryAlias spark_catalog.mydatabase.students
+!            +- 'SubqueryAlias t2                                                                     :     +- 'UnresolvedCatalogRelation `mydatabase`.`students`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false
+!               +- 'Project [*]                                                                       +- 'SubqueryAlias t2
+!                  +- 'Filter ('s2.age < 10)                                                             +- 'Project [*]
+!                     +- 'SubqueryAlias s2                                                                  +- 'Filter ('s2.age < 10)
+!                        +- 'Project [*]                                                                       +- 'SubqueryAlias s2
+!                           +- 'Filter ('s1.age > 100)                                                            +- 'Project [*]
+!                              +- 'SubqueryAlias s1                                                                  +- 'Filter ('s1.age > 100)
+!                                 +- 'UnresolvedRelation [students], [], false                                          +- 'SubqueryAlias s1
+!                                                                                                                          +- 'SubqueryAlias spark_catalog.mydatabase.students
+!                                                                                                                             +- 'UnresolvedCatalogRelation `mydatabase`.`students`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveFunctions ===
+!'Sort ['Now() ASC NULLS FIRST], true                                                                                                                                'Sort [now() ASC NULLS FIRST], true
+ +- 'Distinct                                                                                                                                                        +- 'Distinct
+!   +- 'Project ['t1.name, 't1.address, 'Now() AS z#505]                                                                                                                +- 'Project ['t1.name, 't1.address, now() AS z#505]
+       +- 'Filter ('t1.age > 10)                                                                                                                                           +- 'Filter ('t1.age > 10)
+          +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))                                                                                       +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))
+             :- 'SubqueryAlias t1                                                                                                                                                :- 'SubqueryAlias t1
+             :  +- 'SubqueryAlias spark_catalog.mydatabase.students                                                                                                              :  +- 'SubqueryAlias spark_catalog.mydatabase.students
+             :     +- 'UnresolvedCatalogRelation `mydatabase`.`students`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false                                 :     +- 'UnresolvedCatalogRelation `mydatabase`.`students`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false
+             +- 'SubqueryAlias t2                                                                                                                                                +- 'SubqueryAlias t2
+                +- 'Project [*]                                                                                                                                                     +- 'Project [*]
+                   +- 'Filter ('s2.age < 10)                                                                                                                                           +- 'Filter ('s2.age < 10)
+                      +- 'SubqueryAlias s2                                                                                                                                                +- 'SubqueryAlias s2
+                         +- 'Project [*]                                                                                                                                                     +- 'Project [*]
+                            +- 'Filter ('s1.age > 100)                                                                                                                                          +- 'Filter ('s1.age > 100)
+                               +- 'SubqueryAlias s1                                                                                                                                                +- 'SubqueryAlias s1
+                                  +- 'SubqueryAlias spark_catalog.mydatabase.students                                                                                                                 +- 'SubqueryAlias spark_catalog.mydatabase.students
+                                     +- 'UnresolvedCatalogRelation `mydatabase`.`students`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false                                       +- 'UnresolvedCatalogRelation `mydatabase`.`students`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.datasources.FindDataSourceTable ===
+ 'Sort [now() ASC NULLS FIRST], true                                                                                                                                 'Sort [now() ASC NULLS FIRST], true
+ +- 'Distinct                                                                                                                                                        +- 'Distinct
+    +- 'Project ['t1.name, 't1.address, now() AS z#505]                                                                                                                 +- 'Project ['t1.name, 't1.address, now() AS z#505]
+       +- 'Filter ('t1.age > 10)                                                                                                                                           +- 'Filter ('t1.age > 10)
+          +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))                                                                                       +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))
+!            :- 'SubqueryAlias t1                                                                                                                                                :- SubqueryAlias t1
+!            :  +- 'SubqueryAlias spark_catalog.mydatabase.students                                                                                                              :  +- SubqueryAlias spark_catalog.mydatabase.students
+!            :     +- 'UnresolvedCatalogRelation `mydatabase`.`students`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false                                 :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+             +- 'SubqueryAlias t2                                                                                                                                                +- 'SubqueryAlias t2
+                +- 'Project [*]                                                                                                                                                     +- 'Project [*]
+                   +- 'Filter ('s2.age < 10)                                                                                                                                           +- 'Filter ('s2.age < 10)
+                      +- 'SubqueryAlias s2                                                                                                                                                +- 'SubqueryAlias s2
+                         +- 'Project [*]                                                                                                                                                     +- 'Project [*]
+                            +- 'Filter ('s1.age > 100)                                                                                                                                          +- 'Filter ('s1.age > 100)
+!                              +- 'SubqueryAlias s1                                                                                                                                                +- SubqueryAlias s1
+!                                 +- 'SubqueryAlias spark_catalog.mydatabase.students                                                                                                                 +- SubqueryAlias spark_catalog.mydatabase.students
+!                                    +- 'UnresolvedCatalogRelation `mydatabase`.`students`, org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe, [], false                                       +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.DeduplicateRelations ===
+ 'Sort [now() ASC NULLS FIRST], true                                                                                                                    'Sort [now() ASC NULLS FIRST], true
+ +- 'Distinct                                                                                                                                           +- 'Distinct
+    +- 'Project ['t1.name, 't1.address, now() AS z#505]                                                                                                    +- 'Project ['t1.name, 't1.address, now() AS z#505]
+       +- 'Filter ('t1.age > 10)                                                                                                                              +- 'Filter ('t1.age > 10)
+          +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))                                                                          +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))
+             :- SubqueryAlias t1                                                                                                                                    :- SubqueryAlias t1
+             :  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                  :  +- SubqueryAlias spark_catalog.mydatabase.students
+             :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                                 :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+             +- 'SubqueryAlias t2                                                                                                                                   +- 'SubqueryAlias t2
+                +- 'Project [*]                                                                                                                                        +- 'Project [*]
+                   +- 'Filter ('s2.age < 10)                                                                                                                              +- 'Filter ('s2.age < 10)
+                      +- 'SubqueryAlias s2                                                                                                                                   +- 'SubqueryAlias s2
+                         +- 'Project [*]                                                                                                                                        +- 'Project [*]
+                            +- 'Filter ('s1.age > 100)                                                                                                                             +- 'Filter ('s1.age > 100)
+                               +- SubqueryAlias s1                                                                                                                                    +- SubqueryAlias s1
+                                  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                     +- SubqueryAlias spark_catalog.mydatabase.students
+!                                    +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                                       +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.Analyzer$ResolveReferences ===
+!'Sort [now() ASC NULLS FIRST], true                                                                                                                    Sort [now() ASC NULLS FIRST], true
+!+- 'Distinct                                                                                                                                           +- Distinct
+!   +- 'Project ['t1.name, 't1.address, now() AS z#505]                                                                                                    +- Project [name#431, address#432, now() AS z#505]
+!      +- 'Filter ('t1.age > 10)                                                                                                                              +- Filter (age#435 > 10)
+!         +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))                                                                          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+             :- SubqueryAlias t1                                                                                                                                    :- SubqueryAlias t1
+             :  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                  :  +- SubqueryAlias spark_catalog.mydatabase.students
+             :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                                 :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            +- 'SubqueryAlias t2                                                                                                                                   +- SubqueryAlias t2
+!               +- 'Project [*]                                                                                                                                        +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!                  +- 'Filter ('s2.age < 10)                                                                                                                              +- Filter (age#515 < 10)
+!                     +- 'SubqueryAlias s2                                                                                                                                   +- SubqueryAlias s2
+!                        +- 'Project [*]                                                                                                                                        +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!                           +- 'Filter ('s1.age > 100)                                                                                                                             +- Filter (age#515 > 100)
+                               +- SubqueryAlias s1                                                                                                                                    +- SubqueryAlias s1
+                                  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                     +- SubqueryAlias spark_catalog.mydatabase.students
+                                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                                       +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Resolution ===
+!'Sort ['Now() ASC NULLS FIRST], true                                                     Sort [now() ASC NULLS FIRST], true
+!+- 'Distinct                                                                             +- Distinct
+!   +- 'Project ['t1.name, 't1.address, 'Now() AS z#505]                                     +- Project [name#431, address#432, now() AS z#505]
+!      +- 'Filter ('t1.age > 10)                                                                +- Filter (age#435 > 10)
+!         +- 'Join LeftAnti, (('t1.name <=> 't2.name) OR ('t1.address <=> 't2.address))            +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!            :- 'SubqueryAlias t1                                                                     :- SubqueryAlias t1
+!            :  +- 'UnresolvedRelation [students], [], false                                          :  +- SubqueryAlias spark_catalog.mydatabase.students
+!            +- 'SubqueryAlias t2                                                                     :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!               +- 'Project [*]                                                                       +- SubqueryAlias t2
+!                  +- 'Filter ('s2.age < 10)                                                             +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!                     +- 'SubqueryAlias s2                                                                  +- Filter (age#515 < 10)
+!                        +- 'Project [*]                                                                       +- SubqueryAlias s2
+!                           +- 'Filter ('s1.age > 100)                                                            +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!                              +- 'SubqueryAlias s1                                                                  +- Filter (age#515 > 100)
+!                                 +- 'UnresolvedRelation [students], [], false                                          +- SubqueryAlias s1
+!                                                                                                                          +- SubqueryAlias spark_catalog.mydatabase.students
+!                                                                                                                             +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Apply Char Padding has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Nondeterministic has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch UDF has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch UpdateNullability has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Subquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.CleanupAliases ===
+ Sort [now() ASC NULLS FIRST], true                                                                                                                     Sort [now() ASC NULLS FIRST], true
+ +- Distinct                                                                                                                                            +- Distinct
+    +- Project [name#431, address#432, now() AS z#505]                                                                                                     +- Project [name#431, address#432, now() AS z#505]
+       +- Filter (age#435 > 10)                                                                                                                               +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                                           +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+             :- SubqueryAlias t1                                                                                                                                    :- SubqueryAlias t1
+             :  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                  :  +- SubqueryAlias spark_catalog.mydatabase.students
+             :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                                 :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+             +- SubqueryAlias t2                                                                                                                                    +- SubqueryAlias t2
+                +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                              +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+                   +- Filter (age#515 < 10)                                                                                                                               +- Filter (age#515 < 10)
+                      +- SubqueryAlias s2                                                                                                                                    +- SubqueryAlias s2
+                         +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                              +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+                            +- Filter (age#515 > 100)                                                                                                                              +- Filter (age#515 > 100)
+                               +- SubqueryAlias s1                                                                                                                                    +- SubqueryAlias s1
+                                  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                     +- SubqueryAlias spark_catalog.mydatabase.students
+                                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                                       +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Cleanup ===
+ Sort [now() ASC NULLS FIRST], true                                                                                                                     Sort [now() ASC NULLS FIRST], true
+ +- Distinct                                                                                                                                            +- Distinct
+    +- Project [name#431, address#432, now() AS z#505]                                                                                                     +- Project [name#431, address#432, now() AS z#505]
+       +- Filter (age#435 > 10)                                                                                                                               +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                                           +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+             :- SubqueryAlias t1                                                                                                                                    :- SubqueryAlias t1
+             :  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                  :  +- SubqueryAlias spark_catalog.mydatabase.students
+             :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                                 :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+             +- SubqueryAlias t2                                                                                                                                    +- SubqueryAlias t2
+                +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                              +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+                   +- Filter (age#515 < 10)                                                                                                                               +- Filter (age#515 < 10)
+                      +- SubqueryAlias s2                                                                                                                                    +- SubqueryAlias s2
+                         +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                              +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+                            +- Filter (age#515 > 100)                                                                                                                              +- Filter (age#515 > 100)
+                               +- SubqueryAlias s1                                                                                                                                    +- SubqueryAlias s1
+                                  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                     +- SubqueryAlias spark_catalog.mydatabase.students
+                                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                                       +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 187
+Total time: 0.0178688 seconds
+Total number of effective runs: 6
+Total time of effective runs: 0.0137691 seconds
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Eliminate Distinct has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.analysis.EliminateSubqueryAliases ===
+ Sort [now() ASC NULLS FIRST], true                                                                                                                     Sort [now() ASC NULLS FIRST], true
+ +- Distinct                                                                                                                                            +- Distinct
+    +- Project [name#431, address#432, now() AS z#505]                                                                                                     +- Project [name#431, address#432, now() AS z#505]
+       +- Filter (age#435 > 10)                                                                                                                               +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                                           +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!            :- SubqueryAlias t1                                                                                                                                    :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            :  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                  +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!            :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                                    +- Filter (age#515 < 10)
+!            +- SubqueryAlias t2                                                                                                                                          +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!               +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                                    +- Filter (age#515 > 100)
+!                  +- Filter (age#515 < 10)                                                                                                                                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!                     +- SubqueryAlias s2
+!                        +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!                           +- Filter (age#515 > 100)
+!                              +- SubqueryAlias s1
+!                                 +- SubqueryAlias spark_catalog.mydatabase.students
+!                                    +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ComputeCurrentTime ===
+!Sort [now() ASC NULLS FIRST], true                                                                                                         Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Distinct                                                                                                                                +- Distinct
+!   +- Project [name#431, address#432, now() AS z#505]                                                                                         +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+       +- Filter (age#435 > 10)                                                                                                                   +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                               +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+             :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                           :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+             +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                  +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+                +- Filter (age#515 < 10)                                                                                                                   +- Filter (age#515 < 10)
+                   +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                  +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+                      +- Filter (age#515 > 100)                                                                                                                  +- Filter (age#515 > 100)
+                         +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                           +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Finish Analysis ===
+!Sort [now() ASC NULLS FIRST], true                                                                                                                     Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Distinct                                                                                                                                            +- Distinct
+!   +- Project [name#431, address#432, now() AS z#505]                                                                                                     +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+       +- Filter (age#435 > 10)                                                                                                                               +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                                           +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!            :- SubqueryAlias t1                                                                                                                                    :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            :  +- SubqueryAlias spark_catalog.mydatabase.students                                                                                                  +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!            :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                                    +- Filter (age#515 < 10)
+!            +- SubqueryAlias t2                                                                                                                                          +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!               +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                                    +- Filter (age#515 > 100)
+!                  +- Filter (age#515 < 10)                                                                                                                                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!                     +- SubqueryAlias s2
+!                        +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]
+!                           +- Filter (age#515 > 100)
+!                              +- SubqueryAlias s1
+!                                 +- SubqueryAlias spark_catalog.mydatabase.students
+!                                    +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.RemoveNoopOperators ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                                       Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Distinct                                                                                                                                +- Distinct
+    +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                                       +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+       +- Filter (age#435 > 10)                                                                                                                   +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                               +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+             :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                           :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                  +- Filter (age#515 < 10)
+!               +- Filter (age#515 < 10)                                                                                                                   +- Filter (age#515 > 100)
+!                  +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                  +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!                     +- Filter (age#515 > 100)
+!                        +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Union ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                                       Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Distinct                                                                                                                                +- Distinct
+    +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                                       +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+       +- Filter (age#435 > 10)                                                                                                                   +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                               +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+             :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                           :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                  +- Filter (age#515 < 10)
+!               +- Filter (age#515 < 10)                                                                                                                   +- Filter (age#515 > 100)
+!                  +- Project [name#511, address#512, LastName#513, createTime#514, age#515, student_id#516]                                                  +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!                     +- Filter (age#515 > 100)
+!                        +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch OptimizeLimitZero has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch LocalRelation early has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Pullup Correlated Expressions has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Subquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ReplaceDistinctWithAggregate ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                                 Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+!+- Distinct                                                                                                                          +- Aggregate [name#431, address#432, z#505], [name#431, address#432, z#505]
+    +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                                 +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+       +- Filter (age#435 > 10)                                                                                                             +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                         +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+             :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                     :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+             +- Filter (age#515 < 10)                                                                                                             +- Filter (age#515 < 10)
+                +- Filter (age#515 > 100)                                                                                                            +- Filter (age#515 > 100)
+                   +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Replace Operators ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                                 Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+!+- Distinct                                                                                                                          +- Aggregate [name#431, address#432, z#505], [name#431, address#432, z#505]
+    +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                                 +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+       +- Filter (age#435 > 10)                                                                                                             +- Filter (age#435 > 10)
+          +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                         +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+             :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                     :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+             +- Filter (age#515 < 10)                                                                                                             +- Filter (age#515 < 10)
+                +- Filter (age#515 > 100)                                                                                                            +- Filter (age#515 > 100)
+                   +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Aggregate has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.PushDownPredicates ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                                 Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, z#505], [name#431, address#432, z#505]                                                          +- Aggregate [name#431, address#432, z#505], [name#431, address#432, z#505]
+    +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                                 +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!      +- Filter (age#435 > 10)                                                                                                             +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!         +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                         :- Filter (age#435 > 10)
+!            :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                  :  +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            +- Filter (age#515 < 10)                                                                                                          +- Filter ((age#515 > 100) AND (age#515 < 10))
+!               +- Filter (age#515 > 100)                                                                                                         +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!                  +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ColumnPruning ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                           Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, z#505], [name#431, address#432, z#505]                                                    +- Aggregate [name#431, address#432, z#505], [name#431, address#432, z#505]
+    +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                           +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+       +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                   +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!         :- Filter (age#435 > 10)                                                                                                       :- Project [name#431, address#432]
+!         :  +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet            :  +- Filter (age#435 > 10)
+!         +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                 :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet            +- Project [name#511, address#512]
+!                                                                                                                                           +- Filter ((age#515 > 100) AND (age#515 < 10))
+!                                                                                                                                              +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.FoldablePropagation ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                              Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+!+- Aggregate [name#431, address#432, z#505], [name#431, address#432, z#505]                                                       +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+    +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                              +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+       +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                      +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+          :- Project [name#431, address#432]                                                                                                :- Project [name#431, address#432]
+          :  +- Filter (age#435 > 10)                                                                                                       :  +- Filter (age#435 > 10)
+          :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet            :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+          +- Project [name#511, address#512]                                                                                                +- Project [name#511, address#512]
+             +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                    +- Filter ((age#515 > 100) AND (age#515 < 10))
+                +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                  +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.PushDownLeftSemiAntiJoin ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                              Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]          +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+    +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                              +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!      +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                      +- Project [name#431, address#432]
+!         :- Project [name#431, address#432]                                                                                                +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!         :  +- Filter (age#435 > 10)                                                                                                          :- Filter (age#435 > 10)
+!         :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet               :  +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!         +- Project [name#511, address#512]                                                                                                   +- Project [name#511, address#512]
+!            +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                       +- Filter ((age#515 > 100) AND (age#515 < 10))
+!               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ColumnPruning ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                                 Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]             +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!   +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                                 +- Project [name#431, address#432]
+       +- Project [name#431, address#432]                                                                                                   +- Project [name#431, address#432]
+!         +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                         +- Project [name#431, address#432]
+!            :- Filter (age#435 > 10)                                                                                                             +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!            :  +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet                     :- Project [name#431, address#432]
+!            +- Project [name#511, address#512]                                                                                                      :  +- Filter (age#435 > 10)
+!               +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                       :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!                  +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                  +- Project [name#511, address#512]
+!                                                                                                                                                       +- Filter ((age#515 > 100) AND (age#515 < 10))
+!                                                                                                                                                          +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.CollapseProject ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                                    Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+    +- Project [name#431, address#432]                                                                                                      +- Project [name#431, address#432]
+!      +- Project [name#431, address#432]                                                                                                      +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!         +- Project [name#431, address#432]                                                                                                      :- Project [name#431, address#432]
+!            +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                         :  +- Filter (age#435 > 10)
+!               :- Project [name#431, address#432]                                                                                                :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!               :  +- Filter (age#435 > 10)                                                                                                       +- Project [name#511, address#512]
+!               :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet               +- Filter ((age#515 > 100) AND (age#515 < 10))
+!               +- Project [name#511, address#512]                                                                                                      +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!                  +- Filter ((age#515 > 100) AND (age#515 < 10))
+!                     +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.RemoveNoopOperators ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                              Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]          +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!   +- Project [name#431, address#432]                                                                                                +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                      :- Project [name#431, address#432]
+!         :- Project [name#431, address#432]                                                                                             :  +- Filter (age#435 > 10)
+!         :  +- Filter (age#435 > 10)                                                                                                    :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!         :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet         +- Project [name#511, address#512]
+!         +- Project [name#511, address#512]                                                                                                +- Filter ((age#515 > 100) AND (age#515 < 10))
+!            +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                    +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.PushDownLeftSemiAntiJoin ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                           Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]       +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!   +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                   +- Project [name#431, address#432]
+!      :- Project [name#431, address#432]                                                                                             +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      :  +- Filter (age#435 > 10)                                                                                                       :- Filter (age#435 > 10)
+!      :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet            :  +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!      +- Project [name#511, address#512]                                                                                                +- Project [name#511, address#512]
+!         +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                    +- Filter ((age#515 > 100) AND (age#515 < 10))
+!            +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                  +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ColumnPruning ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                              Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]          +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+    +- Project [name#431, address#432]                                                                                                +- Project [name#431, address#432]
+       +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                      +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!         :- Filter (age#435 > 10)                                                                                                          :- Project [name#431, address#432]
+!         :  +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet               :  +- Filter (age#435 > 10)
+!         +- Project [name#511, address#512]                                                                                                :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                 +- Project [name#511, address#512]
+!               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet               +- Filter ((age#515 > 100) AND (age#515 < 10))
+!                                                                                                                                                 +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.RemoveNoopOperators ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                              Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]          +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!   +- Project [name#431, address#432]                                                                                                +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                      :- Project [name#431, address#432]
+!         :- Project [name#431, address#432]                                                                                             :  +- Filter (age#435 > 10)
+!         :  +- Filter (age#435 > 10)                                                                                                    :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!         :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet         +- Project [name#511, address#512]
+!         +- Project [name#511, address#512]                                                                                                +- Filter ((age#515 > 100) AND (age#515 < 10))
+!            +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                    +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Operator Optimization before Inferring Filters ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                                 Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+!+- Aggregate [name#431, address#432, z#505], [name#431, address#432, z#505]                                                          +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!   +- Project [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]                                                                 +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      +- Filter (age#435 > 10)                                                                                                             :- Project [name#431, address#432]
+!         +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                      :  +- Filter (age#435 > 10)
+!            :- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet               :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            +- Filter (age#515 < 10)                                                                                                       +- Project [name#511, address#512]
+!               +- Filter (age#515 > 100)                                                                                                      +- Filter ((age#515 > 100) AND (age#515 < 10))
+!                  +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.InferFiltersFromConstraints ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                           Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]       +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+    +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                   +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+       :- Project [name#431, address#432]                                                                                             :- Project [name#431, address#432]
+!      :  +- Filter (age#435 > 10)                                                                                                    :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+       :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet         :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+       +- Project [name#511, address#512]                                                                                             +- Project [name#511, address#512]
+!         +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                 +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))
+             +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Infer Filters ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                           Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]       +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+    +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                   +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+       :- Project [name#431, address#432]                                                                                             :- Project [name#431, address#432]
+!      :  +- Filter (age#435 > 10)                                                                                                    :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+       :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet         :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+       +- Project [name#511, address#512]                                                                                             +- Project [name#511, address#512]
+!         +- Filter ((age#515 > 100) AND (age#515 < 10))                                                                                 +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))
+             +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.PushDownLeftSemiAntiJoin ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                           Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]       +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!   +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                   +- Project [name#431, address#432]
+!      :- Project [name#431, address#432]                                                                                             +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      :  +- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                              :- Filter (isnotnull(age#435) AND (age#435 > 10))
+!      :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet            :  +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!      +- Project [name#511, address#512]                                                                                                +- Project [name#511, address#512]
+!         +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))                                                           +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))
+!            +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet                  +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.ColumnPruning ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                              Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]          +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+    +- Project [name#431, address#432]                                                                                                +- Project [name#431, address#432]
+       +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                      +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!         :- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                                 :- Project [name#431, address#432]
+!         :  +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet               :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+!         +- Project [name#511, address#512]                                                                                                :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!            +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))                                                        +- Project [name#511, address#512]
+!               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet               +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))
+!                                                                                                                                                 +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.RemoveNoopOperators ===
+ Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                              Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true
+ +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]          +- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!   +- Project [name#431, address#432]                                                                                                +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                      :- Project [name#431, address#432]
+!         :- Project [name#431, address#432]                                                                                             :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+!         :  +- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                           :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!         :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet         +- Project [name#511, address#512]
+!         +- Project [name#511, address#512]                                                                                                +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))
+!            +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))                                                           +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!               +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Operator Optimization after Inferring Filters has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Push extra predicate through join has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Early Filter and Projection Push-Down has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Update CTE Relation Stats has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Join Reorder has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.catalyst.optimizer.EliminateSorts ===
+!Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                           Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!+- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]       +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!   +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                   :- Project [name#431, address#432]
+!      :- Project [name#431, address#432]                                                                                          :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+!      :  +- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                        :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!      :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet      +- Project [name#511, address#512]
+!      +- Project [name#511, address#512]                                                                                             +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))
+!         +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))                                                        +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!            +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Eliminate Sorts ===
+!Sort [2021-09-05 22:47:42.244 ASC NULLS FIRST], true                                                                           Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]
+!+- Aggregate [name#431, address#432, 2021-09-05 22:47:42.244], [name#431, address#432, 2021-09-05 22:47:42.244 AS z#505]       +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!   +- Join LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                   :- Project [name#431, address#432]
+!      :- Project [name#431, address#432]                                                                                          :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+!      :  +- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                        :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet
+!      :     +- Relation mydatabase.students[name#431,address#432,LastName#433,createTime#434,age#435,student_id#436] parquet      +- Project [name#511, address#512]
+!      +- Project [name#511, address#512]                                                                                             +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))
+!         +- Filter (isnotnull(age#515) AND ((age#515 > 100) AND (age#515 < 10)))                                                        +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+!            +- Relation mydatabase.students[name#511,address#512,LastName#513,createTime#514,age#515,student_id#516] parquet
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Decimal Optimizations has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Distinct Aggregate Rewrite has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Object Expressions Optimization has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch LocalRelation has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Check Cartesian Products has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch RewriteSubquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch NormalizeFloatingNumbers has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch ReplaceUpdateFieldsExpression has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Optimize Metadata Only Query has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch PartitionPruning has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Pushdown Filters from PartitionPruning has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Cleanup filters that cannot be pushed down has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Extract Python UDFs has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch User Provided Optimizers has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 266
+Total time: 0.0089587 seconds
+Total number of effective runs: 19
+Total time of effective runs: 0.0033068 seconds
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.exchange.EnsureRequirements ===
+ HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, z#505])                                                                                                                                                                                                                                                                                                                                  HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, z#505])
+!+- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, 2021-09-05 22:47:42.244#517])                                                                                                                                                                                                                                                                              +- Exchange hashpartitioning(name#431, address#432, 2021-09-05 22:47:42.244#517, 200), ENSURE_REQUIREMENTS, [id=#1004]
+!   +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                                                                                                                                                                                                                                                                                                                    +- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, 2021-09-05 22:47:42.244#517])
+!      :- Project [name#431, address#432]                                                                                                                                                                                                                                                                                                                                                                                                                             +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      :  +- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                                                                                                                                                                                                                                                                                                                                                              :- Project [name#431, address#432]
+!      :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>                                                :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+!      +- Project [name#511, address#512]                                                                                                                                                                                                                                                                                                                                                                                                                                :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+!         +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))                                                                                                                                                                                                                                                                                                                                                                                        +- BroadcastExchange IdentityBroadcastMode, [id=#1000]
+!            +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>               +- Project [name#511, address#512]
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                              +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch AQE Preparations ===
+ HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, z#505])                                                                                                                                                                                                                                                                                                                                  HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, z#505])
+!+- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, 2021-09-05 22:47:42.244#517])                                                                                                                                                                                                                                                                              +- Exchange hashpartitioning(name#431, address#432, 2021-09-05 22:47:42.244#517, 200), ENSURE_REQUIREMENTS, [id=#1004]
+!   +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                                                                                                                                                                                                                                                                                                                    +- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, 2021-09-05 22:47:42.244#517])
+!      :- Project [name#431, address#432]                                                                                                                                                                                                                                                                                                                                                                                                                             +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      :  +- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                                                                                                                                                                                                                                                                                                                                                              :- Project [name#431, address#432]
+!      :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>                                                :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+!      +- Project [name#511, address#512]                                                                                                                                                                                                                                                                                                                                                                                                                                :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+!         +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))                                                                                                                                                                                                                                                                                                                                                                                        +- BroadcastExchange IdentityBroadcastMode, [id=#1000]
+!            +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>               +- Project [name#511, address#512]
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                              +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Applying Rule org.apache.spark.sql.execution.adaptive.InsertAdaptiveSparkPlan ===
+!HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, z#505])                                                                                                                                                                                                                                                                                                                                  AdaptiveSparkPlan isFinalPlan=false
+!+- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, 2021-09-05 22:47:42.244#517])                                                                                                                                                                                                                                                                              +- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, z#505])
+!   +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                                                                                                                                                                                                                                                                                                                    +- Exchange hashpartitioning(name#431, address#432, 2021-09-05 22:47:42.244#517, 200), ENSURE_REQUIREMENTS, [id=#1004]
+!      :- Project [name#431, address#432]                                                                                                                                                                                                                                                                                                                                                                                                                             +- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, 2021-09-05 22:47:42.244#517])
+!      :  +- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                                                                                                                                                                                                                                                                                                                                                              +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>                                                   :- Project [name#431, address#432]
+!      +- Project [name#511, address#512]                                                                                                                                                                                                                                                                                                                                                                                                                                   :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+!         +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))                                                                                                                                                                                                                                                                                                                                                                                           :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+!            +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>               +- BroadcastExchange IdentityBroadcastMode, [id=#1000]
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                              +- Project [name#511, address#512]
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Result of Batch Preparations ===
+!HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, z#505])                                                                                                                                                                                                                                                                                                                                  AdaptiveSparkPlan isFinalPlan=false
+!+- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, 2021-09-05 22:47:42.244#517])                                                                                                                                                                                                                                                                              +- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, z#505])
+!   +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))                                                                                                                                                                                                                                                                                                                                                    +- Exchange hashpartitioning(name#431, address#432, 2021-09-05 22:47:42.244#517, 200), ENSURE_REQUIREMENTS, [id=#1004]
+!      :- Project [name#431, address#432]                                                                                                                                                                                                                                                                                                                                                                                                                             +- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[], output=[name#431, address#432, 2021-09-05 22:47:42.244#517])
+!      :  +- Filter (isnotnull(age#435) AND (age#435 > 10))                                                                                                                                                                                                                                                                                                                                                                                                              +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+!      :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>                                                   :- Project [name#431, address#432]
+!      +- Project [name#511, address#512]                                                                                                                                                                                                                                                                                                                                                                                                                                   :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+!         +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))                                                                                                                                                                                                                                                                                                                                                                                           :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+!            +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>               +- BroadcastExchange IdentityBroadcastMode, [id=#1000]
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                              +- Project [name#511, address#512]
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))
+!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Substitution has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Disable Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Simple Sanity Check has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Resolution has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Remove TempResolvedColumn has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Apply Char Padding has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Post-Hoc Resolution has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Remove Unresolved Hints has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Nondeterministic has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch UDF has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch UpdateNullability has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Subquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Cleanup has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch HandleAnalysisOnlyCommand has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 80
+Total time: 3.584E-4 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Eliminate Distinct has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Finish Analysis has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Union has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch OptimizeLimitZero has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch LocalRelation early has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Pullup Correlated Expressions has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Subquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Replace Operators has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Aggregate has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Operator Optimization before Inferring Filters has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Infer Filters has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Operator Optimization after Inferring Filters has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Push extra predicate through join has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Early Filter and Projection Push-Down has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Update CTE Relation Stats has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Join Reorder has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Eliminate Sorts has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Decimal Optimizations has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Distinct Aggregate Rewrite has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Object Expressions Optimization has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch LocalRelation has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Check Cartesian Products has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch RewriteSubquery has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch NormalizeFloatingNumbers has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch ReplaceUpdateFieldsExpression has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Optimize Metadata Only Query has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch PartitionPruning has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Pushdown Filters from PartitionPruning has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Cleanup filters that cannot be pushed down has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Extract Python UDFs has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch User Provided Optimizers has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 165
+Total time: 6.36E-4 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch Preparations has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger: Batch CleanExpressions has no effect.
+21/09/05 22:47:42 WARN PlanChangeLogger:
+=== Metrics of Executed Rules ===
+Total number of runs: 1
+Total time: 2.2E-6 seconds
+Total number of effective runs: 0
+Total time of effective runs: 0.0 seconds
+
+== Physical Plan ==
+AdaptiveSparkPlan isFinalPlan=false
++- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244#517], functions=[])
+   +- Exchange hashpartitioning(name#431, address#432, 2021-09-05 22:47:42.244#517, 200), ENSURE_REQUIREMENTS, [id=#1004]
+      +- HashAggregate(keys=[name#431, address#432, 2021-09-05 22:47:42.244 AS 2021-09-05 22:47:42.244#517], functions=[])
+         +- BroadcastNestedLoopJoin BuildRight, LeftAnti, ((name#431 <=> name#511) OR (address#432 <=> address#512))
+            :- Project [name#431, address#432]
+            :  +- Filter (isnotnull(age#435) AND (age#435 > 10))
+            :     +- FileScan parquet mydatabase.students[name#431,address#432,age#435,student_id#436] Batched: true, DataFilters: [isnotnull(age#435), (age#435 > 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+            +- BroadcastExchange IdentityBroadcastMode, [id=#1000]
+               +- Project [name#511, address#512]
+                  +- Filter ((isnotnull(age#515) AND (age#515 > 100)) AND (age#515 < 10))
+                     +- FileScan parquet mydatabase.students[name#511,address#512,age#515,student_id#516] Batched: true, DataFilters: [isnotnull(age#515), (age#515 > 100), (age#515 < 10)], Format: Parquet, Location: CatalogFileIndex(1 paths)[file:/C:/Users/hxdre/spark-warehouse/mydatabase.db/students], PartitionFilters: [], PushedFilters: [IsNotNull(age), GreaterThan(age,100), LessThan(age,10)], ReadSchema: struct<name:string,address:string,age:int>
+
+
+Time taken: 0.142 seconds, Fetched 1 row(s)
